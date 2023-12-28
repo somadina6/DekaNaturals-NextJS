@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Banner_01 from "@/components/Banner_01/Banner_01";
+import Banner_01 from "@/components/Banners/Banner_01";
 import Link from "next/link";
 
 export default function Home() {
