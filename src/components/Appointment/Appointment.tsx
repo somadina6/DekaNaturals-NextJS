@@ -2,11 +2,11 @@ import React from "react";
 
 const inputStyle = "border border-gray-400 rounded-md p-2 hover:border-black ";
 
-const Contact: React.FC = () => {
+const Appointment: React.FC = () => {
   return (
     <div>
-      <form className="w-3/5 space-y-4  border-gray-200  rounded-md block mx-auto py-3 px-4">
-        <h2 className="text-center text-green-500 text-lg">
+      <form className="w-3/5 space-y-4 mt-2 border-gray-200  rounded-md block mx-auto py-3 px-4">
+        <h2 className="text-center text-black text-xl">
           Please fill out the information below
         </h2>
         <div className="flex flex-col">
@@ -37,6 +37,7 @@ const Contact: React.FC = () => {
             className={inputStyle}
             id="phone"
             placeholder="08081234567"
+            pattern="[0-9]{11}"
           />
         </div>
         <div className="flex flex-col">
@@ -56,4 +57,4 @@ const Contact: React.FC = () => {
   );
 };
 
-export default Contact;
+export default Appointment;
