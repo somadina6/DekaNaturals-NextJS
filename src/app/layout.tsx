@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Deka Naturals",
-  description: "Get well soon with Deka Naturals",
+  description: "Rooted in nature, thriving in wellness.",
 };
 
 export default function RootLayout({
