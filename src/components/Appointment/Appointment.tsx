@@ -5,7 +5,10 @@ const inputStyle = "border border-gray-400 rounded-md p-2 hover:border-black ";
 const Appointment: React.FC = () => {
   return (
     <div>
-      <form className="w-3/5 space-y-4 mt-2 border-gray-200  rounded-md block mx-auto py-3 px-4">
+      <form
+        id="form"
+        className="w-3/5 space-y-4 mt-2 border-gray-200  rounded-md block mx-auto py-3 px-4"
+      >
         <h2 className="text-center text-black text-xl">
           Please fill out the information below
         </h2>
@@ -49,9 +52,7 @@ const Appointment: React.FC = () => {
             placeholder="Hello, I would like to book an appointment for..."
           />
         </div>
-        <button className="bg-black text-white rounded-md py-2 mx-auto block hover:bg-green-700 px-4">
-          Submit
-        </button>
+        <button className="button-style block mx-auto">Submit</button>
       </form>
     </div>
   );

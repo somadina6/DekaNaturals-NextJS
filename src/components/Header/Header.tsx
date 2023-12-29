@@ -2,19 +2,19 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const navLinks = ["HOME", "APPOINTMENT", "ABOUT", "PRODUCTS", "CONTACT"];
+const navLinks = ["HOME", "APPOINTMENT", "ABOUT", "PRODUCTS", "CONTACT US"];
 
 const navLinksURL: { [key: string]: string } = {
   HOME: "/",
   APPOINTMENT: "/appointment",
   ABOUT: "/about",
   PRODUCTS: "/products",
-  CONTACT: "/contact",
+  "CONTACT US": "/contact",
 };
 
 const Header: React.FC = () => {
   return (
-    <header className="w-full h-20 flex items-center justify-between py-2 sticky bg-white top-0 px-12">
+    <header className="w-full h-20 flex items-center border-b-2 border-gray-400 justify-between py-2 sticky bg-white top-0 px-12">
       <ul className="w-full md:w-3/5 flex items-center justify-between">
         {navLinks.map((link) => {
           return (
