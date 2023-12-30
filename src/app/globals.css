@@ -30,3 +30,7 @@ h1 {
 #form label {
   margin-bottom: 0.25rem;
 }
+
+footer p:hover {
+  font-weight: 700;
+}
