@@ -9,9 +9,9 @@ const Appointment: React.FC = () => {
         id="form"
         className="w-3/5 space-y-4 mt-2 border-gray-200  rounded-md block mx-auto py-3 px-4"
       >
-        <h2 className="text-center text-black text-xl">
-          Please fill out the information below
-        </h2>
+        <h1 className="text-center w w-full w border-b border-gray-500 text-primary font-bold text-4xl  mb-2 pb-2">
+          Schedule An Appointment
+        </h1>
         <div className="flex flex-col">
           <label htmlFor="name">Name</label>
           <input

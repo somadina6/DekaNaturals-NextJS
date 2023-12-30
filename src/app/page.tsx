@@ -11,7 +11,7 @@ export default function Home() {
         children={
           <>
             <Link href="/appointment">
-              <button className="p-2 block mx-auto button-style">
+              <button className="p-2 block mx-auto button-style bg-[#3f9a80]">
                 Schedule An Appointment
               </button>
             </Link>

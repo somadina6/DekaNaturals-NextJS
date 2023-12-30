@@ -14,13 +14,13 @@ const navLinksURL: { [key: string]: string } = {
 
 const Header: React.FC = () => {
   return (
-    <header className="w-full h-20 flex items-center border-b-2 border-gray-400 justify-between py-2 sticky bg-white top-0 px-12">
+    <header className="w-full z-10 h-16 flex items-center border-b border-gray-400 justify-between py-2 sticky bg-white top-0 px-12">
       <ul className="w-full md:w-3/5 flex items-center justify-between">
         {navLinks.map((link) => {
           return (
             <li
               key={link}
-              className="w-1/ text-lg hover:border-b-black hover:border-b-2"
+              className="w-1/ text-lg hover:border-b-primary hover:border-b-2"
             >
               <Link href={navLinksURL[link]}>{link}</Link>
             </li>

@@ -5,12 +5,12 @@ import Link from "next/link";
 
 const page: React.FC = () => {
   return (
-    <div>
-      <Banner_01>
-        <a href="#form">
-          <p className="button-style">Schedule Appointment Below</p>
-        </a>
-      </Banner_01>
+    <div className=" bg-gradient-linear w-full">
+      {/* <Banner_01>
+          <a href="#form">
+            <p className="button-style">Schedule Appointment Below</p>
+          </a>
+        </Banner_01> */}
       <Appointment />
     </div>
   );
