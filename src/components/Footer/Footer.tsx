@@ -6,7 +6,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer className=" h-24 w-full flex flex-col items-center ">
-      <div className="w-1/2 flex items-center justify-between mb-0">
+      <div className="w-1/2 flex flex-col lg:flex-row items-center justify-between mb-0">
         <Link href="/">
           <span className="flex items-center py-4">
             <FaRegCopyright />

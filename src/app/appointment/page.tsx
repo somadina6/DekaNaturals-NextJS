@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const page: React.FC = () => {
   return (
-    <div className=" bg-gradient-linear w-full">
+    <div className=" bg-gradient-linear w w-lvw">
       {/* <Banner_01>
           <a href="#form">
             <p className="button-style">Schedule Appointment Below</p>
