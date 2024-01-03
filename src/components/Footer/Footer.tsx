@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaRegCopyright, FaFileContract } from "react-icons/fa";
 import { MdOutlinePrivacyTip } from "react-icons/md";
 import Image from "next/image";
+import Socials from "../Socials/Socials";
 
 const Footer = () => {
   return (
@@ -28,9 +29,12 @@ const Footer = () => {
           </span>
         </Link>
       </div>
-      <Link className="mt-0" href="/">
-        <Image src="/logo.png" alt="Next Image" width={120} height={80} />
-      </Link>
+      <div className="flex justify-between items-center px-2 py-1 w-1/4">
+        <Link className="mt-0" href="/">
+          <Image src="/logo.png" alt="Next Image" width={120} height={80} />
+        </Link>
+        <Socials />
+      </div>
     </footer>
   );
 };

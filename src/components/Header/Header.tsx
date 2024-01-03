@@ -20,7 +20,7 @@ const Header: React.FC = () => {
           return (
             <li
               key={link}
-              className="w-1/ text-lg hover:border-b-primary hover:border-b-2"
+              className="w-1/ text-lg hover:border-b-primary hover:border-b-2 hover:font-semibold"
             >
               <Link href={navLinksURL[link]}>{link}</Link>
             </li>
