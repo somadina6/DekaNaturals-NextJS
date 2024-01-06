@@ -5,20 +5,18 @@
 .button-style {
   text-decoration: none;
   color: #fff;
-  /* background: #6dbe45; */
-  background-color: #6dbe45;
+  background-color: #3f9a80;
+  border: 1px solid #3f9a80;
   border-radius: 30px;
   opacity: 1;
-  padding: 8px 36px;
+  padding: 8px 20px;
   font-family: Helvetica Neue;
   align-self: center;
-  border: 1px solid #6dbe45;
-  /* transition: ease-out 0.2s; */
 }
 
 .button-style:hover {
-  background-color: black;
-  border: 1px solid black;
+  background-color: green;
+  border: 1px solid green;
   cursor: pointer;
 }
 
