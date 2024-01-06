@@ -31,7 +31,7 @@ h1 {
   margin-bottom: 0.25rem;
 }
 
-footer p:hover {
+.hoverbold:hover {
   font-weight: 700;
   cursor: pointer;
 }
