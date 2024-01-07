@@ -5,7 +5,7 @@ import { TiSocialFacebook, TiSocialInstagram } from "react-icons/ti";
 
 const Footer = () => {
   return (
-    <footer className="mt-10 mb-5">
+    <footer className="mt-10 mb-5 sm:text-sm md:text-[16px]">
       <section className=" h-24 w-full md:w-1/2 mx-auto flex items-center justify-between ">
         <div className="flex flex-col items-start justify-between">
           <p className="ml-1 pb-2">Important Links</p>

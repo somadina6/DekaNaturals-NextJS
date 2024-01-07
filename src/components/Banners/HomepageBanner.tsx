@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import ButtonPrimary from "../Buttons/ButtonPrimary";
 
 const HomepageBanner = () => {
   return (
@@ -14,7 +15,7 @@ const HomepageBanner = () => {
         </h1>
         <h2 className="text-xl">Deka Herbs, Where Healing Begins Naturally</h2>
         <Link href="/appointment">
-          <button className="p-2 button-style block mx-auto">Learn More</button>
+          <ButtonPrimary>Schedule An Appointment</ButtonPrimary>
         </Link>
       </div>
     </div>
