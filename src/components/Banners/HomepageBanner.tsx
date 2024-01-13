@@ -14,9 +14,8 @@ const HomepageBanner = () => {
           Rooted in Nature, Thriving in Wellness
         </h1>
         <h2 className="text-xl">Deka Herbs, Where Healing Begins Naturally</h2>
-        <Link href="/appointment">
-          <ButtonPrimary>Schedule An Appointment</ButtonPrimary>
-        </Link>
+        <Link href="/appointment"></Link>
+        <ButtonPrimary props={{ text: "Schedule An Appointment" }} />
       </div>
     </div>
   );

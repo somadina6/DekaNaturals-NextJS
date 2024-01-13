@@ -1,8 +1,8 @@
 import React from "react";
 
-const ButtonPrimary = ({ children }: { children: string }) => {
+const ButtonPrimary = ({ props }: { props: { text: string } }) => {
   return (
-    <button className="button-style block mx-auto mt-2">{children}</button>
+    <button className="button-style block mx-auto mt-2">{props.text}</button>
   );
 };
 
