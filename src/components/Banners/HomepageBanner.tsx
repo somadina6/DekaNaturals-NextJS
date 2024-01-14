@@ -15,7 +15,7 @@ const HomepageBanner = () => {
         </h1>
         <h2 className="text-xl">Deka Herbs, Where Healing Begins Naturally</h2>
         <Link href="/appointment"></Link>
-        <ButtonPrimary props={{ text: "Schedule An Appointment" }} />
+        <ButtonPrimary children={{ text: "Schedule An Appointment" }} />
       </div>
     </div>
   );

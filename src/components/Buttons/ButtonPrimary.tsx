@@ -1,8 +1,13 @@
 import React from "react";
 
-const ButtonPrimary = ({ props }: { props: { text: string } }) => {
+type ButtonPrimaryProps = {
+  text: string;
+};
+
+const ButtonPrimary = ({ children }: { children: ButtonPrimaryProps }) => {
+  console.log(children);
   return (
-    <button className="button-style block mx-auto mt-2">{props.text}</button>
+    <button className="button-style block mx-auto mt-2">{children.text}</button>
   );
 };
 

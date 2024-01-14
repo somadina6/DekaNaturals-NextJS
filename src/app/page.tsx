@@ -11,7 +11,7 @@ export default function Home() {
       <HomepageBanner />
       <Banner_01>
         <Link href="/appointment">
-          <ButtonPrimary>Schedule An Appointmentx</ButtonPrimary>
+          <ButtonPrimary>{{ text: "Schedule An Appointment" }}</ButtonPrimary>
         </Link>
       </Banner_01>
       <ShowCase1 />

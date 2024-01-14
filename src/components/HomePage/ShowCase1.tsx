@@ -20,7 +20,7 @@ const ShowCase1: React.FC = () => {
             companion for moments of self-care. Elevate your well-being with the
             natural goodness of our therapeutic herbal tea.
           </p>
-          <ButtonPrimary>Shop Now</ButtonPrimary>
+          <ButtonPrimary>{{ text: "Shop Now" }}</ButtonPrimary>
         </div>
       </div>
     </div>
