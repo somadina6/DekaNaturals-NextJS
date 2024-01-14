@@ -21,7 +21,7 @@ const Appointment: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
+    alert(`Thank you ${formData.name}`);
   };
 
   return (
