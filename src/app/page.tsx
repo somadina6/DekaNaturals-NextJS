@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <>
       <HomepageBanner />
-      Soma
       <Banner_01>
         <Link href="/appointment">
           <ButtonPrimary>Schedule An Appointment</ButtonPrimary>
