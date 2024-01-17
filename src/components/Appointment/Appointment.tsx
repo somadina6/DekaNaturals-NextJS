@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import ButtonPrimary from "../Buttons/ButtonPrimary";
+import { LuAsterisk } from "react-icons/lu";
 
 const inputStyle = "border border-gray-400 rounded-md p-2 hover:border-black ";
 
@@ -35,7 +37,9 @@ const Appointment: React.FC = () => {
           Schedule An Appointment
         </h1>
         <div className="flex flex-col">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">
+            <LuAsterisk /> Name
+          </label>
           <input
             type="text"
             name="name"
@@ -44,6 +48,7 @@ const Appointment: React.FC = () => {
             placeholder="John Doe"
             value={formData.name}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="flex flex-col">
@@ -59,7 +64,9 @@ const Appointment: React.FC = () => {
           />
         </div>
         <div className="flex flex-col">
-          <label htmlFor="phone">Phone</label>
+          <label htmlFor="phone">
+            <LuAsterisk /> Phone
+          </label>
           <input
             type="tel"
             name="phone"
@@ -69,10 +76,13 @@ const Appointment: React.FC = () => {
             pattern="[0-9]{11}"
             value={formData.phone}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="flex flex-col">
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">
+            <LuAsterisk /> Message
+          </label>
           <textarea
             name="message"
             id="message"
@@ -80,11 +90,11 @@ const Appointment: React.FC = () => {
             placeholder="Hello, I would like to book an appointment for..."
             value={formData.message}
             onChange={handleChange}
+            required
           />
         </div>
-        <button type="submit" className="button-style block mx-auto">
-          Submit
-        </button>
+
+        <ButtonPrimary>Submit</ButtonPrimary>
       </form>
     </div>
   );
