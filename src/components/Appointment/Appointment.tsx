@@ -38,7 +38,9 @@ const Appointment: React.FC = () => {
         </h1>
         <div className="flex flex-col">
           <label htmlFor="name">
-            <LuAsterisk /> Name
+            <span>
+              <LuAsterisk /> Name
+            </span>
           </label>
           <input
             type="text"
@@ -65,7 +67,9 @@ const Appointment: React.FC = () => {
         </div>
         <div className="flex flex-col">
           <label htmlFor="phone">
-            <LuAsterisk /> Phone
+            <span>
+              <LuAsterisk /> Phone
+            </span>
           </label>
           <input
             type="tel"
@@ -81,7 +85,9 @@ const Appointment: React.FC = () => {
         </div>
         <div className="flex flex-col">
           <label htmlFor="message">
-            <LuAsterisk /> Message
+            <span>
+              <LuAsterisk /> Message
+            </span>
           </label>
           <textarea
             name="message"
