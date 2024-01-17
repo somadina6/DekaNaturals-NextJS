@@ -31,15 +31,16 @@ const Appointment: React.FC = () => {
       <form
         onSubmit={handleSubmit}
         id="form"
-        className="w-3/5 space-y-4 mt-2 border-gray-200  rounded-md block mx-auto py-3 px-4"
+        className="w-full md:w-3/5 space-y-4 mt-2 border-gray-200  rounded-md block mx-auto py-3 px-4 max-w-[900px]"
       >
         <h1 className="text-center w w-full w border-b border-gray-500 text-primary font-bold  text-md md:text-2xl  lg:text-4xl mb-2 pb-2">
           Schedule An Appointment
         </h1>
         <div className="flex flex-col">
           <label htmlFor="name">
-            <span>
-              <LuAsterisk /> Name
+            <span className="flex items-center">
+              <LuAsterisk style={{ color: "red" }} />
+              Name
             </span>
           </label>
           <input
@@ -67,8 +68,8 @@ const Appointment: React.FC = () => {
         </div>
         <div className="flex flex-col">
           <label htmlFor="phone">
-            <span>
-              <LuAsterisk /> Phone
+            <span className="flex items-center">
+              <LuAsterisk style={{ color: "red" }} /> Phone
             </span>
           </label>
           <input
@@ -85,8 +86,8 @@ const Appointment: React.FC = () => {
         </div>
         <div className="flex flex-col">
           <label htmlFor="message">
-            <span>
-              <LuAsterisk /> Message
+            <span className="flex items-center">
+              <LuAsterisk style={{ color: "red" }} /> Message
             </span>
           </label>
           <textarea
