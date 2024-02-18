@@ -4,23 +4,45 @@
 
 .button-style {
   text-decoration: none;
-  color: #fff;
-  background-color: #3f9a80;
-  border: 1px solid #3f9a80;
+  color: #6DBE45;
+  background-color: #fff;
+  border: 1px solid #6DBE45;
   border-radius: 30px;
   opacity: 1;
-  padding: 8px 20px;
+  padding: 4px 26px;
   font-family: Helvetica Neue;
   align-self: center;
+  font-weight: 500;
 }
 
 .button-style:hover {
-  background-color: green;
-  border: 1px solid green;
+  background-color: #6DBE45;
+  border: 1px solid #6DBE45;
+  color: #fff;
+  cursor: pointer;
+}
+.button-style2 {
+  text-decoration: none;
+  color: #6DBE45;
+  background-color: #fff;
+  border: 1px solid #6DBE45;
+  border-radius: 30px;
+  opacity: 1;
+  padding: 4px 26px;
+  font-family: Helvetica Neue;
+  align-self: center;
+  font-weight: 500;
+}
+
+.button-style2:hover {
+  background-color: #D8D248;
+  border: 1px solid #D8D248;
+  color: #fff;
   cursor: pointer;
 }
 
 h2,
+p,
 h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
