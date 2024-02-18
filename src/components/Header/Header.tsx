@@ -2,7 +2,13 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const navLinks = ["HOME", "APPOINTMENT", "ABOUT", "PRODUCTS", "CONTACT US"];
+const navLinks = [
+  "PRODUCTS",
+  "SERVICES",
+  "APPOINTMENT",
+  "ABOUT US",
+  "CONTACT US",
+];
 
 const navLinksURL: { [key: string]: string } = {
   HOME: "/",
@@ -23,7 +29,7 @@ const Header: React.FC = () => {
           return (
             <li
               key={link}
-              className=" text-[15px] hover:border-b-primary hover:border-b-2 hover:font-semibold"
+              className=" text-[15px]  font-bold hover:border-b-primary hover:border-b-2 hover:font-semibold"
             >
               <Link href={navLinksURL[link]}>{link}</Link>
             </li>
