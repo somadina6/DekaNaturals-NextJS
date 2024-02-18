@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .button-style {
   text-decoration: none;
   color: #6DBE45;
