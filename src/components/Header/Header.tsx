@@ -15,6 +15,9 @@ const navLinksURL: { [key: string]: string } = {
 const Header: React.FC = () => {
   return (
     <header className="w-full z-10 h-16 flex items-center border-b border-gray-400 justify-between py-2 sticky bg-white top-0 px-12">
+      <Link className="mt-2" href="/">
+        <Image src="/logo.png" alt="Next Image" width={120} height={80} />
+      </Link>
       <ul className="w-full md:w-3/5 flex items-center justify-between">
         {navLinks.map((link) => {
           return (
@@ -27,10 +30,6 @@ const Header: React.FC = () => {
           );
         })}
       </ul>
-
-      <Link className="mt-2" href="/">
-        <Image src="/logo.png" alt="Next Image" width={120} height={80} />
-      </Link>
     </header>
   );
 };
