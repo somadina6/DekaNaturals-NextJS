@@ -13,9 +13,10 @@ const navLinks = [
 const navLinksURL: { [key: string]: string } = {
   HOME: "/",
   APPOINTMENT: "/appointment",
-  ABOUT: "/about",
+  "ABOUT US": "/about",
   PRODUCTS: "/products",
   "CONTACT US": "/contact",
+  SERVICES: "/services",
 };
 
 const Header: React.FC = () => {
@@ -29,7 +30,7 @@ const Header: React.FC = () => {
           return (
             <li
               key={link}
-              className=" text-[15px]  font-bold hover:border-b-primary hover:border-b-2 hover:font-semibold"
+              className=" text-[15px] hover:border-b-primary hover:border-b-2 hover:font-semibold"
             >
               <Link href={navLinksURL[link]}>{link}</Link>
             </li>
