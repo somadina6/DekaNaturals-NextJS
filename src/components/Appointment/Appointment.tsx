@@ -6,8 +6,11 @@ const axios = require("axios");
 
 const inputStyle = "border border-gray-400 rounded-md p-2 hover:border-black ";
 
+const inputcol = "flex items-center w-full justify-between";
+
 const initFormData = {
-  name: "",
+  firstname: "",
+  lastname: "",
   email: "",
   phone: "",
   message: "",
@@ -29,7 +32,7 @@ const Appointment: React.FC = () => {
         "http://localhost:4000/api/appointments",
         formData
       );
-      alert(`${response.data.customerName}, ${response.data.message}`);
+      alert(`${response.data.firstname}, ${response.data.message}`);
       console.log(response);
     } catch (error: any) {
       alert(error.message);
@@ -64,56 +67,79 @@ const Appointment: React.FC = () => {
         onSubmit={handleSubmit}
         method="post"
         id="form"
-        className="w-full space-y-4 mt-2 border-gray-200  rounded-md block mx-auto py-3 px-4 max-w-[900px]"
+        className="w-full space-y-4 mt-2 border-gray-300 border rounded-md block mx-auto py-3 px-4 max-w-[900px]"
       >
-        <div className="flex flex-col">
-          <label htmlFor="name">
-            <span className="flex items-center">
-              <LuAsterisk style={{ color: "red" }} />
-              Name
-            </span>
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            className={inputStyle}
-            placeholder="John Doe"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+        <div id="name-box" className={inputcol}>
+          <div className="flex flex-col w-1/2 pr-1">
+            <label htmlFor="firstname">
+              <span className="flex items-center">
+                <LuAsterisk style={{ color: "red" }} />
+                First Name
+              </span>
+            </label>
+            <input
+              type="text"
+              name="firstname"
+              id="firstname"
+              className={inputStyle}
+              placeholder="John"
+              value={formData.firstname}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="flex flex-col w-1/2">
+            <label htmlFor="lastname">
+              <span className="flex items-center">
+                <LuAsterisk style={{ color: "red" }} />
+                Last Name
+              </span>
+            </label>
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              className={inputStyle}
+              placeholder="Doe"
+              value={formData.lastname}
+              onChange={handleChange}
+              required
+            />
+          </div>
         </div>
-        <div className="flex flex-col">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            className={inputStyle}
-            placeholder="email@company.com"
-            value={formData.email}
-            onChange={handleChange}
-          />
+        <div className={inputcol}>
+          <div className="flex flex-col w-1/2 pr-1">
+            <label htmlFor="phone">
+              <span className="flex items-center">
+                <LuAsterisk style={{ color: "red" }} /> Phone
+              </span>
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              className={inputStyle}
+              id="phone"
+              placeholder="08081234567"
+              pattern="[0-9]{10,11}"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="flex flex-col w-1/2 ">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className={inputStyle}
+              placeholder="email@company.com"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
         </div>
-        <div className="flex flex-col">
-          <label htmlFor="phone">
-            <span className="flex items-center">
-              <LuAsterisk style={{ color: "red" }} /> Phone
-            </span>
-          </label>
-          <input
-            type="tel"
-            name="phone"
-            className={inputStyle}
-            id="phone"
-            placeholder="08081234567"
-            pattern="[0-9]{10,11}"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-        </div>
+
         <div className="flex flex-col">
           <label htmlFor="message">
             <span className="flex items-center">

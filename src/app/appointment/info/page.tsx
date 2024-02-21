@@ -33,7 +33,8 @@ const Page = () => {
       );
       alert(response.data.message);
     } catch (err: any) {
-      alert(err.message);
+      alert(err.response.data.message);
+      //   alert(err.message);
     }
   };
   return (
