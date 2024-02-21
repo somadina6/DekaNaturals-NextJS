@@ -1,5 +1,5 @@
 "use client";
-import axios from "axios";
+const axios = require("axios");
 import { useState } from "react";
 import "./styles.css";
 import ButtonPrimary from "@/components/Buttons/ButtonPrimary";
@@ -20,16 +20,21 @@ const page = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     try {
       const response = await axios.get(
         "http://localhost:4000/api/appointments",
         {
           params: {
             id: formData.appointment_id,
+            lastname: formData.lastname,
           },
         }
       );
-    } catch (err) {}
+      alert(response.data.message);
+    } catch (err: any) {
+      alert(err.message);
+    }
   };
   return (
     <div className="w h-screen">
@@ -39,6 +44,7 @@ const page = () => {
         </h2>
 
         <form
+          onSubmit={handleSubmit}
           method="post"
           id="form"
           className="border p-4 rounded-md items-center border-1"
