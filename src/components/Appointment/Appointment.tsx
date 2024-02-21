@@ -2,6 +2,7 @@
 import { useState } from "react";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 import { LuAsterisk } from "react-icons/lu";
+const axios = require("axios");
 
 const inputStyle = "border border-gray-400 rounded-md p-2 hover:border-black ";
 
@@ -21,21 +22,50 @@ const Appointment: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(`Thank you ${formData.name}`);
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/appointments",
+        formData
+      );
+      alert(`${response.data.customerName}, ${response.data.message}`);
+      console.log(response);
+    } catch (error: any) {
+      alert(error.message);
+      console.log(error);
+    }
   };
 
   return (
-    <div>
+    <div className="w-3/5 mx-auto">
+      <h1 className="text-center w-3/5 block mx-auto border-b border-gray-500 text-primary font-bold md:text-md lg:text-2xl mb-2 pb-2">
+        Schedule An Appointment
+      </h1>
+      <div id="">
+        <p className="px-4">
+          Welcome to our appointment booking page! Please fill out the form
+          below to schedule an appointment with us. We strive to provide
+          excellent service and accommodate your scheduling needs as best as we
+          can. Please provide accurate information to ensure that we can assist
+          you effectively. Once you submit the form, our team will review your
+          appointment request and reach out to confirm the details.
+        </p>
+        <br />
+        <p className="px-4">
+          Already have an appointment? Get it{" "}
+          <a style={{ color: "red" }} href="/appointment/info">
+            <strong>here</strong>
+          </a>
+        </p>
+      </div>
+
       <form
         onSubmit={handleSubmit}
+        method="post"
         id="form"
-        className="w-full md:w-3/5 space-y-4 mt-2 border-gray-200  rounded-md block mx-auto py-3 px-4 max-w-[900px]"
+        className="w-full space-y-4 mt-2 border-gray-200  rounded-md block mx-auto py-3 px-4 max-w-[900px]"
       >
-        <h1 className="text-center w w-full w border-b border-gray-500 text-primary font-bold  text-md md:text-2xl  lg:text-4xl mb-2 pb-2">
-          Schedule An Appointment
-        </h1>
         <div className="flex flex-col">
           <label htmlFor="name">
             <span className="flex items-center">
@@ -78,7 +108,7 @@ const Appointment: React.FC = () => {
             className={inputStyle}
             id="phone"
             placeholder="08081234567"
-            pattern="[0-9]{11}"
+            pattern="[0-9]{10,11}"
             value={formData.phone}
             onChange={handleChange}
             required
