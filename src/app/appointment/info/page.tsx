@@ -7,7 +7,7 @@ import ButtonPrimary from "@/components/Buttons/ButtonPrimary";
 const inputStyle =
   "border border-gray-400 block rounded-md p-1 hover:border-black ";
 
-const page = () => {
+const Page = () => {
   const initFormData = {
     appointment_id: "",
     lastname: "",
@@ -88,4 +88,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
