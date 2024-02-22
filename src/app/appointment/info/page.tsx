@@ -25,7 +25,7 @@ const Page = () => {
     const baseUrl =
       process.env.NODE_ENV == "development"
         ? "http://localhost:4000"
-        : "deka-naturals-express.vercel.app";
+        : "http://deka-naturals-express.vercel.app";
     console.log(baseUrl);
     e.preventDefault();
     try {
