@@ -8,6 +8,11 @@ const inputStyle = "border border-gray-400 rounded-md p-2 hover:border-black ";
 
 const inputcol = "flex items-center w-full justify-between";
 
+const baseUrl =
+  process.env.NODE_ENV == "development"
+    ? "http://localhost:4000"
+    : "deka-naturals-express.vercel.app";
+
 const initFormData = {
   firstname: "",
   lastname: "",
@@ -29,7 +34,7 @@ const Appointment: React.FC = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/appointments",
+        `${baseUrl}/api/appointments`,
         formData
       );
       alert(`${response.data.firstname}, ${response.data.message}`);

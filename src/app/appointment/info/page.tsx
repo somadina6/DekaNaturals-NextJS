@@ -1,9 +1,11 @@
 "use client";
 const axios = require("axios");
+const dotenv = require("dotenv");
 import { useState } from "react";
 import "./styles.css";
 import ButtonPrimary from "@/components/Buttons/ButtonPrimary";
 
+dotenv.config();
 const inputStyle =
   "border border-gray-400 block rounded-md p-1 hover:border-black ";
 
@@ -20,21 +22,26 @@ const Page = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const baseUrl =
+      process.env.NODE_ENV == "development"
+        ? "http://localhost:4000"
+        : "deka-naturals-express.vercel.app";
+    console.log(baseUrl);
     e.preventDefault();
     try {
-      const response = await axios.get(
-        "http://localhost:4000/api/appointments",
-        {
-          params: {
-            id: formData.appointment_id,
-            lastname: formData.lastname,
-          },
-        }
-      );
+      const response = await axios.get(`${baseUrl}/api/appointments`, {
+        params: {
+          id: formData.appointment_id,
+          lastname: formData.lastname,
+        },
+      });
       alert(response.data.message);
     } catch (err: any) {
-      alert(err.response.data.message);
-      //   alert(err.message);
+      if (err.response) {
+        alert(err.response.data.message);
+      } else {
+        alert(err.message);
+      }
     }
   };
   return (
