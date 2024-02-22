@@ -11,7 +11,7 @@ const inputcol = "flex items-center w-full justify-between";
 const baseUrl =
   process.env.NODE_ENV == "development"
     ? "http://localhost:4000"
-    : "deka-naturals-express.vercel.app";
+    : " https:deka-naturals-express.vercel.app";
 
 const initFormData = {
   firstname: "",
