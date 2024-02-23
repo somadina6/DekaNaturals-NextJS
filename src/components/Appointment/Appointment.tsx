@@ -29,7 +29,7 @@ const Appointment: React.FC = () => {
     const baseUrl =
       process.env.NODE_ENV == "development"
         ? "http://localhost:4000"
-        : " https:deka-naturals-express.vercel.app";
+        : "https:deka-naturals-express.vercel.app";
     e.preventDefault();
     try {
       const response = await axios.post(
@@ -38,9 +38,12 @@ const Appointment: React.FC = () => {
       );
       alert(`${response.data.firstname}, ${response.data.message}`);
       console.log(response);
-    } catch (error: any) {
-      alert(error.message);
-      console.log(error);
+    } catch (err: any) {
+      if (err.response) {
+        alert(err.response.data.message);
+      } else {
+        alert(err.message);
+      }
     }
   };
 
