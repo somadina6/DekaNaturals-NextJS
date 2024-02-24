@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 import { LuAsterisk } from "react-icons/lu";
-const axios = require("axios");
+import axios from "../../../src/config/axios.config";
 
 const inputStyle = "border border-gray-400 rounded-md p-2 hover:border-black ";
 
@@ -26,19 +26,21 @@ const Appointment: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    const baseUrl =
-      process.env.NODE_ENV == "development"
-        ? "http://localhost:4000"
-        : "https:deka-naturals-express.vercel.app";
     e.preventDefault();
+
+    const config = {
+      method: "post",
+      url: "/api/appointments",
+      data: formData,
+    };
+
     try {
-      const response = await axios.post(
-        `${baseUrl}/api/appointments`,
-        formData
-      );
+      const response = await axios(config);
       alert(`${response.data.firstname}, ${response.data.message}`);
       console.log(response);
     } catch (err: any) {
+      console.log("Failed To Post");
+
       if (err.response) {
         alert(err.response.data.message);
       } else {

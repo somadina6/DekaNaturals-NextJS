@@ -1,5 +1,5 @@
 "use client";
-const axios = require("axios");
+import axios from "../../../../src/config/axios.config";
 const dotenv = require("dotenv");
 import { useState } from "react";
 import "./styles.css";
@@ -22,19 +22,18 @@ const Page = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    const baseUrl =
-      process.env.NODE_ENV == "development"
-        ? "http://localhost:4000"
-        : "https://deka-naturals-express.vercel.app";
-    console.log(baseUrl);
     e.preventDefault();
+
+    const config = {
+      url: "/api/appointments",
+      params: {
+        id: formData.appointment_id,
+        lastname: formData.lastname,
+      },
+    };
+
     try {
-      const response = await axios.get(`${baseUrl}/api/appointments`, {
-        params: {
-          id: formData.appointment_id,
-          lastname: formData.lastname,
-        },
-      });
+      const response = await axios(config);
       alert(response.data.message);
     } catch (err: any) {
       if (err.response) {
@@ -44,6 +43,7 @@ const Page = () => {
       }
     }
   };
+
   return (
     <div className="w h-screen">
       <div id="main-container" className="mt-4 mx-auto w-3/5 block h-full">
