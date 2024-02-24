@@ -39,7 +39,7 @@ const Page = () => {
       if (err.response) {
         alert(err.response.data.message);
       } else {
-        alert(err.message);
+        alert(`Error fetching appointment data: ${err.message}`);
       }
     }
   };
