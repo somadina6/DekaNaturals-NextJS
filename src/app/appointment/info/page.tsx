@@ -4,6 +4,9 @@ const dotenv = require("dotenv");
 import { useState } from "react";
 import "./styles.css";
 import ButtonPrimary from "@/components/Buttons/ButtonPrimary";
+import appointmentType from "@/types/appointmentTypes";
+import AppointmentOrder from "@/components/Appointment/AppointmentOrder";
+import { InfinitySpin } from "react-loader-spinner";
 
 dotenv.config();
 const inputStyle =
@@ -15,7 +18,13 @@ const Page = () => {
     lastname: "",
   };
 
+  const [errorStatus, setErrorStatus] = useState<Boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<String>("");
+  const [loading, setLoading] = useState<Boolean>(false);
+  const [successStatus, setSuccessStatus] = useState<Boolean>(false);
   const [formData, setFormData] = useState(initFormData);
+  const [appointmentDataRetrieved, setAppointmentData] =
+    useState<appointmentType | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,21 +40,30 @@ const Page = () => {
         lastname: formData.lastname,
       },
     };
+    setLoading(true);
+    setErrorStatus(false);
+    setSuccessStatus(false);
 
     try {
       const response = await axios(config);
-      alert(response.data.message);
+      setLoading(false);
+      setSuccessStatus(response.data.success);
+      setAppointmentData(response.data.appointmentDocument);
+      console.log(successStatus);
+      console.log(appointmentDataRetrieved);
     } catch (err: any) {
+      setErrorStatus(true);
+      setLoading(false);
       if (err.response) {
-        alert(err.response.data.message);
+        setErrorMessage(err.response.data.message);
       } else {
-        alert(`Error fetching appointment data: ${err.message}`);
+        setErrorMessage(`Error fetching appointment data: ${err.message}`);
       }
     }
   };
 
   return (
-    <div className="w h-screen">
+    <div id="maindiv" className="">
       <div id="main-container" className="mt-4 mx-auto w-3/5 block h-full">
         <h2 className="text-xl text-primary block mx-auto mt-8 text-center mb-2">
           Retrieve Your Appointment
@@ -55,7 +73,7 @@ const Page = () => {
           onSubmit={handleSubmit}
           method="post"
           id="form"
-          className="border p-4 rounded-md items-center border-1"
+          className="border p-4 rounded-md items-center "
         >
           <h3 className="text-center mb-2">
             Retrieve your appointment details using your Appointment ID (ex:
@@ -91,6 +109,23 @@ const Page = () => {
           </div>
           <ButtonPrimary>Submit</ButtonPrimary>
         </form>
+        {loading && (
+          <div className="flex items-center justify-center mx-auto ">
+            <InfinitySpin width="200" color="#4fa94d" />
+          </div>
+        )}
+
+        {errorStatus && (
+          <p className="text-red-700 mt-3 text-center mx-auto text-lg sm:text-md">
+            {errorMessage}
+          </p>
+        )}
+
+        {successStatus && appointmentDataRetrieved && (
+          <div className="mt-3">
+            <AppointmentOrder appointmentData={appointmentDataRetrieved} />
+          </div>
+        )}
       </div>
     </div>
   );
